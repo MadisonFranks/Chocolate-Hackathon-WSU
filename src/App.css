@@ -1,0 +1,1067 @@
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  background: #f8f5ef;
+  color: #29241f;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+  min-height: 100px;
+
+  padding: 22px 40px;
+
+  background: #ffffff;
+
+  border-bottom:
+    1px solid #ded8cf;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  margin: 0 0 5px;
+
+  color: #a47a3c;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: 3px;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.header-buttons {
+  display: flex;
+
+  gap: 10px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 11px 20px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.primary-button {
+  border:
+    1px solid #30241c;
+
+  background: #30241c;
+
+  color: white;
+}
+
+.primary-button:hover {
+  background: #49372c;
+
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  border:
+    1px solid #30241c;
+
+  background: white;
+
+  color: #30241c;
+}
+
+.secondary-button:hover {
+  background: #f8f5ef;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   MAIN BUILDER
+   ========================================= */
+
+.builder {
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(500px, 1fr)
+    340px;
+
+  min-height:
+    calc(100vh - 100px);
+}
+
+
+/* =========================================
+   SIDE PANELS
+   ========================================= */
+
+.panel {
+  padding: 32px 25px;
+
+  background: #ffffff;
+}
+
+.chocolate-panel {
+  border-right:
+    1px solid #ded8cf;
+}
+
+.customize-panel {
+  border-left:
+    1px solid #ded8cf;
+}
+
+.panel h2 {
+  margin-top: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+  font-weight: normal;
+
+  text-align: center;
+}
+
+.description {
+  color: #756d65;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   CHOCOLATE LIST
+   ========================================= */
+
+.chocolate-list {
+  margin-top: 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.chocolate-option {
+  width: 100%;
+
+  padding: 12px 15px;
+
+  border:
+    1px solid #ded8cf;
+
+  border-radius: 7px;
+
+  background: white;
+
+  cursor: grab;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-align: left;
+}
+
+.chocolate-option:hover {
+  background: #f8f5ef;
+
+  border-color: #b99970;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 4px 10px
+    rgba(0, 0, 0, 0.06);
+}
+
+.chocolate-option:active {
+  cursor: grabbing;
+}
+
+.chocolate-name {
+  font-size: 16px;
+}
+
+.drag-handle {
+  margin-left: auto;
+
+  color: #b59a7b;
+
+  font-size: 22px;
+}
+
+.chocolate {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CHOCOLATE COLORS
+   ========================================= */
+
+.milk {
+  background: #956039;
+}
+
+.dark {
+  background: #40291f;
+}
+
+.caramel {
+  background: #cf8d49;
+} 
+
+.logo-piece {
+  background: #e8c982;
+
+  color: #30241c;
+
+  font-size: 8px;
+  font-weight: bold;
+}
+
+
+/* =========================================
+   SMALL LOGO
+   ========================================= */
+
+.small-logo-image {
+  width: 78%;
+  height: 78%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================
+   HOW TO USE
+   ========================================= */
+
+.drag-tip {
+  margin-top: 35px;
+
+  padding: 18px;
+
+  background: #f7f1e7;
+
+  border-radius: 7px;
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+.drag-tip strong {
+  display: block;
+
+  margin-bottom: 8px;
+}
+
+.drag-tip p {
+  margin: 0;
+
+  color: #756d65;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CENTER DESIGN AREA
+   ========================================= */
+
+.box-area {
+  padding: 45px 35px;
+
+  background: #faf7f1;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.box-heading {
+  margin-bottom: 5px;
+}
+
+.box-heading h2 {
+  margin: 5px 0;
+
+  font-family: Georgia, serif;
+
+  font-size: 34px;
+  font-weight: normal;
+}
+
+.box-heading p {
+  margin-top: 8px;
+
+  color: #756d65;
+}
+
+.eyebrow {
+  color: #a47a3c !important;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   CHOCOLATE BOX
+   ========================================= */
+
+.chocolate-box {
+  width: 625px;
+
+  max-width: 100%;
+
+  margin-top: 25px;
+
+  padding: 45px;
+
+  background: #3b2a20;
+
+  border:
+    14px solid #281c16;
+
+  border-radius: 14px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+
+  box-shadow:
+    0 18px 40px
+    rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================
+   BOX SLOT
+   ========================================= */
+
+.box-slot {
+  aspect-ratio: 1;
+
+  min-width: 0;
+
+  border:
+    2px dashed #b59c85;
+
+  border-radius: 9px;
+
+  background: #f0e7dc;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: #9c8e82;
+
+  font-size: 12px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.box-slot:hover {
+  transform:
+    scale(1.04);
+
+  border-color: #a47a3c;
+
+  background: #fffaf1;
+
+  box-shadow:
+    0 4px 10px
+    rgba(0, 0, 0, 0.12);
+}
+
+.filled-slot {
+  border-style: solid;
+
+  cursor: pointer;
+}
+
+.slot-number {
+  font-size: 12px;
+}
+
+
+/* =========================================
+   PLACED CHOCOLATES
+   ========================================= */
+
+.placed-chocolate {
+  width: 76%;
+  height: 76%;
+
+  border-radius: 11px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 2px 3px
+    rgba(255, 255, 255, 0.25),
+
+    0 4px 8px
+    rgba(0, 0, 0, 0.25);
+}
+
+.placed-chocolate.milk {
+  background: #956039;
+}
+
+.placed-chocolate.dark {
+  background: #40291f;
+}
+
+.placed-chocolate.caramel {
+  background: #cf8d49;
+}
+
+.placed-logo {
+  background: #e8c982;
+
+  color: #30241c;
+
+  font-size: 10px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================
+   COMPANY LOGO ON CHOCOLATE
+   ========================================= */
+
+.placed-logo-image {
+  width: 75%;
+  height: 75%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================
+   24 PIECE BOX
+   ========================================= */
+
+.chocolate-box.box-24 {
+  width: 700px;
+
+  padding: 32px;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 10px;
+}
+
+.box-24 .box-slot {
+  min-width: 0;
+}
+
+
+/* =========================================
+   BOX STATUS
+   ========================================= */
+
+.status {
+  margin-top: 25px;
+
+  padding: 11px 18px;
+
+  background: #eef5ec;
+
+  border-radius: 22px;
+
+  color: #4d6948;
+
+  font-size: 13px;
+}
+
+.remove-tip {
+  margin-top: 12px;
+
+  color: #756d65;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   CUSTOMIZATION LABELS
+   ========================================= */
+
+.customize-panel > label,
+.card-message-section > label {
+  display: block;
+
+  margin-top: 24px;
+  margin-bottom: 8px;
+
+  color: #29241f;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   DROPDOWNS
+   ========================================= */
+
+.customize-panel select {
+  width: 100%;
+
+  padding: 12px;
+
+  background: white;
+
+  border:
+    1px solid #cfc7bd;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.customize-panel select:focus {
+  outline:
+    2px solid
+    rgba(164, 122, 60, 0.25);
+
+  border-color: #a47a3c;
+}
+
+
+/* =========================================
+   CARD MESSAGE
+   ========================================= */
+
+.card-message-section {
+  width: 100%;
+}
+
+.card-message {
+  width: 100%;
+
+  min-height: 95px;
+
+  padding: 12px;
+
+  border:
+    1px solid #cfc7bd;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #29241f;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  resize: vertical;
+}
+
+.card-message:focus {
+  outline:
+    2px solid
+    rgba(164, 122, 60, 0.25);
+
+  border-color: #a47a3c;
+}
+
+.card-message::placeholder {
+  color: #9b9289;
+}
+
+.character-count {
+  margin-top: 6px;
+
+  color: #8a8178;
+
+  font-size: 11px;
+
+  text-align: right;
+}
+
+
+/* =========================================
+   HIDDEN FILE INPUT
+   ========================================= */
+
+.hidden-file-input {
+  display: none;
+}
+
+
+/* =========================================
+   UPLOAD LOGO BUTTON
+   ========================================= */
+
+.logo-upload-label {
+  width: 100%;
+
+  margin-top: 0 !important;
+
+  padding: 14px;
+
+  border:
+    1px dashed #a47a3c;
+
+  border-radius: 6px;
+
+  background: #fffaf1;
+
+  color: #805d29 !important;
+
+  cursor: pointer;
+
+  display: block !important;
+
+  font-size: 16px !important;
+
+  font-weight: normal !important;
+
+  text-align: center !important;
+}
+
+.logo-upload-label:hover {
+  background: #f7f0e3;
+
+  border-color: #805d29;
+}
+
+
+/* =========================================
+   UPLOADED LOGO CARD
+   ========================================= */
+
+.uploaded-logo-card {
+  width: 100%;
+
+  padding: 16px;
+
+  border:
+    1px solid #ded8cf;
+
+  border-radius: 8px;
+
+  background: #fffaf1;
+
+  text-align: center;
+}
+
+.uploaded-logo-preview {
+  width: 100%;
+
+  min-height: 100px;
+
+  padding: 12px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e2dbd2;
+
+  border-radius: 6px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.uploaded-logo-preview img {
+  max-width: 100%;
+
+  max-height: 90px;
+
+  object-fit: contain;
+}
+
+.logo-upload-success {
+  margin-top: 10px;
+
+  color: #4d6948;
+
+  font-size: 13px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================
+   LOGO ACTIONS
+   ========================================= */
+
+.logo-actions {
+  margin-top: 12px;
+
+  display: flex;
+
+  gap: 8px;
+}
+
+.change-logo-button,
+.remove-logo-button {
+  flex: 1;
+
+  min-height: 38px;
+
+  padding: 9px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+.change-logo-button {
+  margin: 0 !important;
+
+  border:
+    1px solid #a47a3c;
+
+  background: #ffffff;
+
+  color: #805d29 !important;
+
+  display: flex !important;
+
+  justify-content: center;
+  align-items: center;
+
+  font-weight: normal !important;
+}
+
+.change-logo-button:hover {
+  background: #f7f1e7;
+}
+
+.remove-logo-button {
+  border:
+    1px solid #b9afa5;
+
+  background: white;
+
+  color: #62584f;
+}
+
+.remove-logo-button:hover {
+  background: #f4efea;
+}
+
+
+/* =========================================
+   PLACEMENT RULE
+   ========================================= */
+
+.rule-card {
+  margin-top: 30px;
+
+  padding: 17px;
+
+  background: #f7f1e7;
+
+  border-left:
+    3px solid #a47a3c;
+
+  border-radius:
+    0 6px 6px 0;
+
+  text-align: left;
+
+  font-size: 13px;
+}
+
+.rule-card strong {
+  display: block;
+
+  margin-bottom: 7px;
+}
+
+.rule-card p {
+  margin-bottom: 0;
+
+  color: #756d65;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   APPROVED PLACEMENT
+   ========================================= */
+
+.placement-approved {
+  background: #eef5ec;
+
+  border-left-color: #587653;
+}
+
+.placement-approved strong {
+  color: #456141;
+}
+
+.placement-approved p {
+  color: #52684e;
+}
+
+
+/* =========================================
+   PLACEMENT WARNING
+   ========================================= */
+
+.placement-warning {
+  background: #fff3df;
+
+  border-left-color: #c4872f;
+}
+
+.placement-warning strong {
+  color: #8a5b18;
+}
+
+.placement-warning p {
+  color: #775b36;
+}
+
+
+/* =========================================
+   POSITION INFORMATION
+   ========================================= */
+
+.logo-location {
+  margin-top: 10px !important;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+.recommended-spots {
+  margin-top: 10px !important;
+
+  padding-top: 10px;
+
+  border-top:
+    1px solid
+    rgba(164, 122, 60, 0.2);
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================
+   RESPONSIVE - MEDIUM
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+  .builder {
+    grid-template-columns:
+      240px
+      minmax(450px, 1fr)
+      280px;
+  }
+
+  .chocolate-box {
+    width: 520px;
+
+    padding: 30px;
+  }
+
+  .chocolate-box.box-24 {
+    width: 580px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .header {
+    padding: 20px;
+
+    gap: 20px;
+  }
+
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .builder {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    border: none;
+
+    border-bottom:
+      1px solid #ded8cf;
+  }
+
+  .box-area {
+    padding: 35px 20px;
+  }
+
+  .chocolate-box,
+  .chocolate-box.box-24 {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .header-buttons {
+    width: 100%;
+  }
+
+  .header-buttons button {
+    flex: 1;
+  }
+
+  .box-heading h2 {
+    font-size: 28px;
+  }
+
+  .chocolate-box {
+    padding: 20px;
+
+    gap: 8px;
+  }
+
+  .chocolate-box.box-24 {
+    padding: 15px;
+
+    gap: 6px;
+  }
+
+  .logo-actions {
+    flex-direction: column;
+  }
+
+}
